@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Courier New", monospace;
+  background: #000;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Main Page */
 
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 20px;
+  background: #000;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 100%;
+  max-width: 650px;
+  background: #000;
+  padding: 35px;
+  border: 1px solid #333;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Heading */
+
+h1 {
+  text-align: center;
+  font-size: 34px;
+  color: #00ff66;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* Tabs */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #333;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #00ff66;
+  border-bottom: 2px solid #00ff66;
+}
+
+/* Form */
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.output-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field label {
+  color: #00ff66;
+  font-size: 14px;
+}
+
+.copy-button {
+  padding: 4px 9px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.copy-button:hover:not(:disabled) {
+  border-color: #00ff66;
+  color: #00ff66;
+}
+
+.copy-button:disabled {
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* Input and Textarea */
+
+textarea,
+input {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+input {
+  height: 45px;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #666;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #00ff66;
+}
+
+/* Button */
+
+.action-button {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #00ff66;
+  border-radius: 6px;
+  background: #000;
+  color: #00ff66;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: #00ff66;
+  color: #000;
+}
+/* Password Modal */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.password-modal {
+  width: 90%;
+  max-width: 400px;
+
+  background: #000;
+  border: 1px solid #00ff66;
+  border-radius: 8px;
+
+  padding: 30px;
+}
+
+.password-modal h2 {
+  color: #00ff66;
+  font-family: "Courier New", monospace;
+  font-size: 20px;
+
+  margin-bottom: 20px;
+}
+
+.password-modal input {
+  width: 100%;
+  height: 45px;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #333;
+  border-radius: 6px;
+
+  padding: 12px;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.password-modal input:focus {
+  border-color: #00ff66;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  flex: 1;
+
+  padding: 11px;
+
+  border-radius: 6px;
+
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.cancel-button:hover {
+  border-color: #fff;
+}
+
+.unlock-button {
+  background: #00ff66;
+  color: #000;
+  border: 1px solid #00ff66;
+}
+
+.unlock-button:hover {
+  background: #00cc52;
 }
